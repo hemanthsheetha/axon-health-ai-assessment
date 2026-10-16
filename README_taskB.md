@@ -68,7 +68,7 @@ flowchart LR
 
 **7. Iteration, versioning, caching.**
 - **Iteration:** follow-ups ("now split by discharge reason") edit the previous spec instead of starting over.
-- **Versioning:** dashboard specs are stored as versioned JSON documents (spec + schema version + glossary version), so a chart can be reproduced or rolled back.
+- **Versioning:** dashboard specs are stored as versioned JSON documents (spec + schema version + glossary version),so a chart can be reproduced or rolled back.
 - **Caching:** results are keyed on hash(tenant + spec), and in production also the data version, so they invalidate on new data.
 
 ## Scope and next steps
