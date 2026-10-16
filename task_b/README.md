@@ -10,7 +10,7 @@ conda activate axon
 
 **2. Install dependencies**
 ```bash
-pip install -r requirements.txt
+pip install -r ../requirements.txt
 ```
 I'd normally use [uv](https://docs.astral.sh/uv/) with a lockfile for faster, fully reproducible installs; `requirements.txt` keeps it simple for this submission.
 
@@ -25,18 +25,18 @@ No key? Everything still runs with the offline stub (a deterministic stand-in fo
 Never commit the key; it is only read from the sidebar or the environment.
 
 ## Run
-Put `harbourview_residents.csv` in this folder (or one level up), then:
+From the `task_b/` folder (data is read from `../data/`):
 ```bash
 streamlit run app.py                           # UI: 6 sample questions, each clarifies a vague term, then answers
-python demo.py harbourview_residents.csv       # CLI walkthrough: question types, a clarification turn, safety checks
-python run_eval.py harbourview_residents.csv   # regression eval; exits 1 below a 90% pass rate
+python demo.py       # CLI walkthrough: question types, a clarification turn, safety checks
+python run_eval.py   # regression eval; exits 1 below a 90% pass rate
 ```
 In the UI sidebar, choose **Gemini** or **Offline stub**. For Gemini, pick one or more models from the list your key can access; they are tried in order, falling back to the next on 503 (high demand) or 429 (rate limit) errors. The model only ever sees the schema and saved definitions, never resident records.
 
 ## System design
-![System design](axon_system_design.png)
+![System design](../docs/axon_system_design.png)
 
-Prototype flow: a vague term gets a clarifying question; otherwise the LLM (schema only) writes a JSON spec, code validates and compiles it to tenant-scoped SQL, SQLite runs it read-only, the chart shows the query's numbers, and an answer check confirms every number in the caption came from the result rows. Editable source: `axon_system_design.drawio`.
+Prototype flow: a vague term gets a clarifying question; otherwise the LLM (schema only) writes a JSON spec, code validates and compiles it to tenant-scoped SQL, SQLite runs it read-only, the chart shows the query's numbers, and an answer check confirms every number in the caption came from the result rows. Editable source: `../docs/axon_system_design.drawio`.
 
 ## Flow (prototype)
 ```mermaid

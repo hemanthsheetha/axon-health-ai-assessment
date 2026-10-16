@@ -26,7 +26,7 @@ def check(r, exp) -> bool:
 
 
 if __name__ == "__main__":
-    csv = sys.argv[1] if len(sys.argv) > 1 else "harbourview_residents.csv"
+    csv = sys.argv[1] if len(sys.argv) > 1 else "../data/harbourview_residents.csv"
     if os.path.exists(DB):
         os.remove(DB)
     load_csv(csv, DB, "harbourview")

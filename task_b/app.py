@@ -26,7 +26,7 @@ st.set_page_config(page_title="Harbourview analytics assistant", layout="centere
 
 @st.cache_resource
 def init_db() -> str:
-    csv = next(p for p in ["harbourview_residents.csv", "../harbourview_residents.csv"] if os.path.exists(p))
+    csv = next(p for p in ["../data/harbourview_residents.csv", "harbourview_residents.csv"] if os.path.exists(p))
     db = os.path.join(tempfile.mkdtemp(), "axon_ui.db")
     load_csv(csv, db, TENANT)
     load_csv(csv, db, "other_house")  # second tenant in the same table: proves tenant scoping
