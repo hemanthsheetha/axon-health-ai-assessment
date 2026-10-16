@@ -13,6 +13,7 @@ Synthetic data only (`data/harbourview_residents.csv`, ~200 fictional residents)
 │   ├── llm.py                         #   Gemini spec/caption model + offline deterministic stub
 │   ├── pipeline.py                    #   ask(): clarify → spec → validate → compile → run → answer check → audit
 │   ├── demo.py / run_eval.py          #   CLI demo and regression eval (eval_cases.json)
+├── docs/TASK_C.md                     # Task C written answers (C1 notes→structure, C2 accuracy, C3 predictive idea)
 ├── docs/axon_system_design.png        # prototype flow diagram (.drawio source alongside)
 └── requirements.txt
 ```
@@ -44,6 +45,9 @@ python run_eval.py        # regression eval (exits 1 below 90% pass rate)
 - Ongoing stays are **censored**: measured to year end and shown separately, never averaged with completed stays.
 - Follow-up rates use everyone whose follow-up is due as the denominator; lost to follow-up is its own category; best and worst cases are labelled.
 - Excluded and documented: intake-before-referral records (2) from timing; discharged-with-no-date records (3) from occupancy and length of stay.
+
+## Task C
+Written answers are in [docs/TASK_C.md](docs/TASK_C.md).
 
 ## AI assistance disclosure
 I used Claude (Anthropic) as a coding assistant. It reviewed my Task A notebook and corrected calculation logic (occupancy, censoring, follow-up denominators), and wrote most of the Task B prototype code and Streamlit UI from a design we worked out together. I chose the fiscal year, metric definitions and chart types, reviewed and ran all code, and verified the numbers against the data.
