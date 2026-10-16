@@ -1,5 +1,5 @@
 """End-to-end demo: 4 question types + 1 clarification turn + 3 safety checks.
-Run: python demo.py harbourview_residents.csv   (uses Gemini if GOOGLE_API_KEY is set, else the offline stub)"""
+Run from task_b/:  python demo.py   (reads ../data/harbourview_residents.csv; uses Gemini if GOOGLE_API_KEY is set, else the offline stub)"""
 import os
 import sys
 

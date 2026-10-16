@@ -1,5 +1,5 @@
 """Regression eval: NL question -> expected spec / clarification / rejection.
-Run on every prompt or model change (CI). Exit code 1 if the pass rate drops below the threshold."""
+Run from task_b/: python run_eval.py. Run on every prompt or model change (CI). Exit code 1 if the pass rate drops below the threshold."""
 import json
 import os
 import sys

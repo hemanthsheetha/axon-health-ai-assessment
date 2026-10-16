@@ -1,5 +1,5 @@
 """Streamlit UI for the NL -> JSON spec -> read-only query -> chart prototype.
-Run:  streamlit run app.py
+Run from task_b/:  streamlit run app.py   (reads ../data/harbourview_residents.csv)
 Every sample question contains a vague term, so each one goes: clarify -> user picks a definition -> answer."""
 import json
 import os
