@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.db
+audit_log.jsonl
+.env
+.ipynb_checkpoints/

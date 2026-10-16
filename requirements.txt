@@ -1,0 +1,5 @@
+pandas>=2.2
+pydantic>=2.7
+plotly>=5.22
+streamlit>=1.36
+google-genai>=1.31
